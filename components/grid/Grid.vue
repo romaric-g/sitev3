@@ -1,0 +1,233 @@
+<template>
+  <section class="page">
+    <div class="title">
+      <h1><a to="root">Romaric Gauzi</a></h1>
+    </div>
+
+    <div class="nav-item-container top">
+      <GridLink direction="right" />
+    </div>
+    <div class="nav-item-container bottom">
+      <GridLink direction="left" />
+    </div>
+    <div class="reseaux">
+    <ul>
+      <li><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.6,5,2.5,9.3,6.9,10.7v-2.3c0,0-0.4,0.1-0.9,0.1c-1.4,0-2-1.2-2.1-1.9 c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1c0.4,0,0.7-0.1,0.9-0.2 c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6c0,0,1.4,0,2.8,1.3 C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4c0.7,0.8,1.2,1.8,1.2,3 c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v3.3c4.1-1.3,7-5.1,7-9.5C22,6.1,16.9,1.4,10.9,2.1z"/></svg></li>
+      <li><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M 21.800781 0 L 2.199219 0 C 1 0 0 1 0 2.199219 L 0 21.800781 C 0 23 1 24 2.199219 24 L 21.800781 24 C 23 24 24 23 24 21.800781 L 24 2.199219 C 24 1 23 0 21.800781 0 Z M 7 20 L 3 20 L 3 9 L 7 9 Z M 5 7.699219 C 3.800781 7.699219 3 6.898438 3 5.898438 C 3 4.800781 3.800781 4 5 4 C 6.199219 4 7 4.800781 7 5.800781 C 7 6.898438 6.199219 7.699219 5 7.699219 Z M 21 20 L 17 20 L 17 14 C 17 12.398438 15.898438 12 15.601563 12 C 15.300781 12 14 12.199219 14 14 C 14 14.199219 14 20 14 20 L 10 20 L 10 9 L 14 9 L 14 10.601563 C 14.601563 9.699219 15.601563 9 17.5 9 C 19.398438 9 21 10.5 21 14 Z"/></svg></li>
+      <li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96.124px" height="96.123px" viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;"xml:space="preserve"><g><path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/></g></svg></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"/></svg></li>
+    </ul>
+    </div>
+    <div class="content">
+        <transition name="router-anim" >
+            <slot></slot>
+        </transition>
+      </div>
+  </section>    
+</template>
+
+<script>
+
+import GridLink from "@/components/grid/GridLink.vue";
+
+export default {
+    components: {GridLink}
+}
+</script>
+
+<style lang="scss">
+.title > * {
+    margin: 20px;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: white;
+
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+      
+}
+section.page > .content {
+    grid-row: 2;
+    grid-column: 2;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    & > .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-shrink: 0;
+    }
+}
+
+.left.router-anim-enter-active {
+  animation: leavingLeft .4s ease-in-out;
+}
+.left.router-anim-leave-active {
+  animation: goingLeft .4s ease-in-out;
+}
+.center.router-anim-enter-active {
+  animation: goingCenter .4s ease-in-out;
+}
+.center.router-anim-leave-active {
+  animation: leavingCenter .4s ease-in-out;
+}
+
+@keyframes goingLeft {
+  from { transform: translateX(0); } 
+  to { transform: translateX(-150%); }
+}
+@keyframes leavingLeft {
+  from { transform: translateX(-150%); } 
+  to { transform: translateX(0);}
+}
+@keyframes goingCenter {
+  from {transform: translateX(150%);} 
+  to { transform: translateX(0);}
+}
+@keyframes leavingCenter {
+  from { transform: translateX(0);} 
+  to { transform: translateX(150%); }
+}
+
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+
+section.page {
+    height: 100vh;
+    width: 100vw;
+    min-width: 250px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 80px 1fr 80px;
+    overflow: hidden;
+}
+
+section.page .title {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+section.page .nav-item-container {
+    position: relative;
+    &.top {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    &.bottom {
+      grid-column: 1;
+      grid-row: 3;      
+    }
+}
+
+section.page .reseaux {
+    grid-column: 3;
+    grid-row: 3;
+    position: relative;
+}
+
+section.page .reseaux ul {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 0;
+}
+
+section.page .reseaux ul li {
+    height: 35px;
+    width: 35px;
+    margin: 20px auto;
+}
+section.page .reseaux ul li svg {
+    height: 100%;
+    width: 100%;
+    fill: white;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    section.page > .content {
+        grid-row: 2;
+        grid-column: 1 / 4;
+    }
+
+    section.page .reseaux {
+        grid-column: 2 / 4;
+    }
+
+    section.page .reseaux ul {
+        position: relative;
+        margin: 0;
+        padding: 0 20px;
+    }
+    section.page .reseaux ul li {
+        display: inline-block;
+        float: right;
+        margin: 20px 5px;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    section.page {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    section.page > .title { order: 1; }
+
+    section.page > .nav-item-container.top { order: 2; }
+    
+    section.page > .content { order: 3; }
+    
+    section.page > .nav-item-container.bottom { order: 4; }
+    
+    section.page > .reseaux { order: 5; }
+
+    section.page > .content {
+        order: 3;
+        flex: 1;
+        padding: 20px 10px;
+    }
+
+    section.page .title h1 {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    section.page .reseaux ul  {
+        display: flex;
+        justify-content: center;
+    }
+
+    section.page .reseaux ul li {
+        float: unset;
+        margin: 0 12px 20px 12px;
+    }
+}
+
+</style>
