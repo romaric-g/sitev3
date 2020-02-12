@@ -1,9 +1,10 @@
 <template>
     <div class="container left">
         <div id="about">
-            <img src="@/assets/images/me.jpg" alt="" >
+            <section class="portrait">
+                <img src="@/assets/images/me.jpg" alt="" >
+            </section>
             <section class="about">
-
                 <div class="section-select">
                     <div class="container" v-bind:style="scrollInformation">
                         <section>
@@ -26,8 +27,8 @@
                         </section>
                     </div>
                 </div>
-            
-                <div class="selector">
+            </section>
+            <section class="selector">
                     <span></span>
                     <div class="container">
                         <ul>
@@ -37,7 +38,6 @@
                         </ul>
                     </div>
                     <span></span>
-                </div>
             </section>
         </div>
     </div>
@@ -51,7 +51,8 @@ export default {
         }
     },
     fetch ({ store, params }) {
-        store.commit('defineBottomLink', "Retour au projet", "/");
+        console.log("test about");
+        store.commit('defineBottomLink', {name:"Retour au projet", link:"/"});
     },
     methods: {
         changeSection(sectionNumber) {
@@ -79,29 +80,38 @@ export default {
             { hid: 'description', name: 'description', content: 'Ma description personnalisée' }
         ]
         }
+    },
+    transition: {
+        name: 'bounce',
+        mode: 'out-in'
     }
 }
 </script>
 
 <style lang="scss">
 #about {
+
     display: grid;
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
-    grid-template-columns: 280px 1fr 1fr;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: 1fr auto;
+    grid-column-gap: 1em;
     width: 100%;
-}
 
-#about {
+    section.portrait {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
 
-    img {
-        width: 100%;
-        /*clip-path: polygon(5% 0, 95% 0, 95% 100%, 5% 100%);*/
+        img {
+            width: 100%;
+            object-fit: cover
+            /*clip-path: polygon(5% 0, 95% 0, 95% 100%, 5% 100%);*/
+        }
     }
 
     section.about {
-        grid-column: 2 / 4;
         color: white;
         text-align: right;
         padding-left: 35px;
@@ -151,7 +161,7 @@ export default {
         }
     }
 
-    section.about .selector {
+    section.selector {
 
         display: flex;
         align-items: center;
@@ -178,8 +188,8 @@ export default {
         li {
             position: relative;
             display: block;
-            height: 60px;
-            width: 60px;
+            height: 3.5em;
+            width: 3.5em;
 
             display: flex;
             justify-content: center;
@@ -191,8 +201,8 @@ export default {
         }
 
         li.active {
-            height: 95px;
-            width: 95px;
+            height: 5.5em;
+            width: 5.5em;
         }
 
         li.active::before {
@@ -223,5 +233,59 @@ export default {
              fill: #110d2d;
         }
     }
+}
+
+@media screen and (max-width: 900px) {
+    #about {
+        height: 80%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 20px 40px;
+        box-sizing: border-box;
+
+        section.portrait {
+            display: none;
+        }
+
+        section.about {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        section.selector {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+    }   
+}
+
+@media screen and (max-width: 700px) {
+#about {height: 100%;}
+}
+
+@media screen and (max-width: 500px) {
+    #about {
+        padding: 40px 20px;
+        section.selector {
+
+            display: flex;
+            align-items: center;
+
+            span {
+                flex: 1;
+                width: 5px;
+            }
+        }       
+        section.about {
+            text-align: center;
+            padding: 0;
+            section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+    
 }
 </style>

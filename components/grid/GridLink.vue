@@ -2,23 +2,13 @@
     <div class="nav-item" :class="direction">
         <span></span>
         <!-- <p><a href="#">ME CONTACTEZ</a></p> -->
-          <transition name="link-anim" :duration="2000">
-            <p :key="bottomName"><nuxt-link :to="bottomLink ? bottomLink : '/'" href="#">{{ bottomName }}</nuxt-link></p>
-          </transition>
+        <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
     props: ["direction"],
-    computed: {
-        bottomLink () {
-            return this.$store.state.bottomLink.link;
-        },
-        bottomName() {
-            return this.$store.state.bottomLink.name
-        }
-    },
     data() {
         return {
             show: true
@@ -48,8 +38,8 @@ export default {
     &.right .link-anim-enter { transform: translateX(-200px) scale(0.5) }
     &.left .link-anim-enter { transform: translateX(200px) scale(0.5); }
     .link-anim-enter-active {
-        transition-delay: 0.4s;
         transition: all 0.4s;
+        transition-delay: 0.8s;
     }
 
     span {

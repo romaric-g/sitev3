@@ -5,10 +5,14 @@
     </div>
 
     <div class="nav-item-container top">
-      <GridLink direction="right" />
+      <GridLink direction="right"><p>Menu</p></GridLink>
     </div>
     <div class="nav-item-container bottom">
-      <GridLink direction="left" />
+        <GridLink direction="left">
+            <transition name="link-anim" mode="out-in">
+                <p :key="bottomName"><nuxt-link :to="bottomLink">{{ bottomName }}</nuxt-link></p>
+            </transition>
+        </GridLink>
     </div>
     <div class="reseaux">
     <ul>
@@ -19,10 +23,8 @@
     </ul>
     </div>
     <div class="content">
-        <transition name="router-anim" >
-            <slot></slot>
-        </transition>
-      </div>
+        <slot></slot>
+    </div>
   </section>    
 </template>
 
@@ -31,7 +33,16 @@
 import GridLink from "@/components/grid/GridLink.vue";
 
 export default {
-    components: {GridLink}
+    components: {GridLink},
+    computed: {
+        bottomLink () {
+            return this.$store.state.bottomLink.link;
+        },
+        bottomName() {
+            let l = this.$store.state.bottomLink.name;
+            return l || "/";
+        }
+    },
 }
 </script>
 
@@ -72,37 +83,6 @@ section.page > .content {
         flex-shrink: 0;
     }
 }
-
-.left.router-anim-enter-active {
-  animation: leavingLeft .4s ease-in-out;
-}
-.left.router-anim-leave-active {
-  animation: goingLeft .4s ease-in-out;
-}
-.center.router-anim-enter-active {
-  animation: goingCenter .4s ease-in-out;
-}
-.center.router-anim-leave-active {
-  animation: leavingCenter .4s ease-in-out;
-}
-
-@keyframes goingLeft {
-  from { transform: translateX(0); } 
-  to { transform: translateX(-150%); }
-}
-@keyframes leavingLeft {
-  from { transform: translateX(-150%); } 
-  to { transform: translateX(0);}
-}
-@keyframes goingCenter {
-  from {transform: translateX(150%);} 
-  to { transform: translateX(0);}
-}
-@keyframes leavingCenter {
-  from { transform: translateX(0);} 
-  to { transform: translateX(150%); }
-}
-
 
 
 .fade-enter-active, .fade-leave-active {

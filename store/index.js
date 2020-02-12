@@ -6,7 +6,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-    defineBottomLink (state, name, link) {
-      state.bottomLink = {name: name, link: link};
+    defineBottomLink (state, bottomLink) {
+      state.bottomLink = bottomLink;
     }
 }

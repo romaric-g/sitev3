@@ -111,7 +111,13 @@ export default {
         }
     },
     fetch ({ store, params }) {
-        store.commit('defineBottomLink', "À propos", "/about");
+        console.log("test");
+        store.commit('defineBottomLink', {name:"À propos", link:"/about"});
+    },
+    
+    transition: {
+        name: 'bounce',
+        mode: 'out-in'
     }
 }
 </script>
