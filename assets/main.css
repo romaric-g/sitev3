@@ -16,27 +16,48 @@
 } */
 
 
-.bounce-enter-active {
-  animation: bounce-in .8s;
+.left.bounce-enter-active {
+  animation: bounce-in-left.8s;
 }
-.bounce-leave-active {
-  animation: bounce-out .8s;
+.left.bounce-leave-active {
+  animation: bounce-out-left .8s;
 }
-@keyframes bounce-in {
+.right.bounce-enter-active {
+  animation: bounce-in-right .8s;
+}
+.right.bounce-leave-active {
+  animation: bounce-out-right .8s;
+}
+@keyframes bounce-in-left {
   0% {
-    transform: scale(0.8) translateX(-180vh);
+    transform: scale(0.8) translateX(-200vh);
   }
   40% { transform: scale(0.8) translateX(0);}
   60% { transform: scale(0.8) translateX(0);}
   100% { transform: scale(1) translateX(0); }
 }
-@keyframes bounce-out {
+@keyframes bounce-out-right {
   0% {
     transform: scale(1) translateX(0);
   }
   40% { transform: scale(0.8) translateX(0);}
   60% { transform: scale(0.8) translateX(0);}
-  100% { transform: scale(0.8) translateX(180vh); }
+  100% { transform: scale(0.8) translateX(200vh); }
 }
-
+@keyframes bounce-in-right {
+  0% {
+    transform: scale(0.8) translateX(200vh);
+  }
+  40% { transform: scale(0.8) translateX(0);}
+  60% { transform: scale(0.8) translateX(0);}
+  100% { transform: scale(1) translateX(0); }
+}
+@keyframes bounce-out-left {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  40% { transform: scale(0.8) translateX(0);}
+  60% { transform: scale(0.8) translateX(0);}
+  100% { transform: scale(0.8) translateX(-200vh); }
+}
 

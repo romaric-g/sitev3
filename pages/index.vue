@@ -1,5 +1,5 @@
 <template>
-    <div class="container center">
+    <div class="container right">
       <div id="projects">
         <h2>MES PROJETS</h2>
         <div class="projects-nav">
@@ -169,6 +169,7 @@ export default {
     margin: 0;
     padding: 0;
     transform: scale(0);
+    transition-duration: 0.3s;
 }
 
 #projects .projects-nav ul li.active p {
