@@ -1,6 +1,6 @@
 <template>
-    <div class="nav-item" :class="direction">
-        <span></span>
+    <div class="nav-item" :class="direction" :style="{ color: color}">
+        <span v-bind:style="{ backgroundColor: color}"></span>
         <!-- <p><a href="#">ME CONTACTEZ</a></p> -->
         <slot></slot>
     </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    props: ["direction"],
+    props: ["direction","color"],
     data() {
         return {
             show: true
@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .nav-item {
     position: relative;
     display: flex;
@@ -27,7 +26,7 @@ export default {
 
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 15;
 
     /* Animation */
     .link-anim-leave-active {
@@ -47,11 +46,13 @@ export default {
         width: 100%;
         height: 2px;
         background-color: white;
+        transition: background-color 0.3s;
     }
 
     p {
         position: absolute;
-        color: white;
+        color: inherit;
+        transition: color 0.3s;
         white-space: nowrap;
         font-size: 1.1em;
         letter-spacing: 4px;
@@ -71,7 +72,7 @@ export default {
 
     a {
         text-decoration: none;
-        color: white;
+        color: inherit;
     }
 }
 
@@ -90,7 +91,6 @@ export default {
     .nav-item p {
         position: static;
         text-align: center;
-        color: white;
         font-size: .9em;
         margin: 20px 0!important;
     }
