@@ -19,9 +19,9 @@ ul {
     padding: 0;
 }
 ul li {
-    height: 35px;
-    width: 35px;
-    margin: 20px;
+    height: 30px;
+    width: 30px;
+    margin: 16px;
     padding: 0;
 }
 ul li svg {

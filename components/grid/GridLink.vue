@@ -92,7 +92,7 @@ export default {
         position: static;
         text-align: center;
         font-size: .9em;
-        margin: 20px 0!important;
+        margin: 15px 0!important;
     }
 }
 

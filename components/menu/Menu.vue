@@ -1,15 +1,14 @@
 <template>
-    <header :class="{open: open}">
+    <div class="header" :class="{open: open}">
+        <div class="mobile-closer" @click="toggleMenu">
+            <p>close</p>
+        </div>
         <nav>
             <ul>
                 <li>
-                    <p class="nav-title">Projets<span class="count">7</span></p>
+                    <p class="nav-title">Projets<span class="count">{{ projects.length}}</span></p>
                     <ul>
-                        <li>StrawMyLife</li>
-                        <li>Elena Koutoulidis</li>
-                        <li>Ecroc</li>
-                        <li>QuizMadrid</li>
-                        <li>Mobile'douche</li>
+                        <li v-for="(project, index) of projects" :key="index"><nuxt-link :to="'project/' + project.path ">{{project.name}}</nuxt-link></li>
                     </ul>
                 </li>
                 <li>
@@ -27,7 +26,7 @@
         <div class="menu-reseaux">
             <Reseaux></Reseaux>
         </div>
-    </header>
+    </div>
 </template>
 
 <script>
@@ -35,13 +34,18 @@
 import Reseaux from "@/components/common/Reseaux.vue";
 
 export default {
-    props: ["open"],
-    components: {Reseaux}
+    props: ["open","toggleMenu"],
+    components: {Reseaux},
+    data() {
+        return {
+            projects: this.$store.getters.projectsList
+        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-    header {
+    .header {
         position: absolute;
         z-index: 10;
         width: 410px;
@@ -55,14 +59,18 @@ export default {
         display: flex;
         flex-direction: column;
         box-shadow: -20px 0 50px rgba(0, 0, 0, 0.3);
+
+        .mobile-closer {
+            display: none;
+        }
     }
-    header.open {
+    .header.open {
         transform: translateX(0)
     }
 
     //HEADER SECTIONS
 
-    header nav {
+    .header nav {
         flex: 1;
         & > ul {
             height: 100%;
@@ -76,6 +84,15 @@ export default {
             text-align: center;
             &, li {
                 padding: 0;
+
+                a {
+                    text-decoration: none;
+                    color: #110d2d;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
 
@@ -121,8 +138,29 @@ export default {
         }
     }
 
-    header .menu-reseaux {
+    .header .menu-reseaux {
         flex: 0;
+    }
+    
+    @media screen and (max-width: 550px) {
+
+        .header {
+            z-index: 100;
+            padding: 10px;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
+            
+            .mobile-closer {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                p {
+                    margin: 0;
+                }
+            }
+        }
     }
 </style>
 

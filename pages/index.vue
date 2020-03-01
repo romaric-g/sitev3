@@ -11,7 +11,7 @@
                   is="project-element" 
                   v-for="(project, index) in projects" 
                   :key="index"
-                  :class="selected === index ? 'active' : ''" 
+                  :class="selectedProject === index ? 'active' : ''" 
                   :number="index" 
                   v-on:select="selectProject(index)">
                 </li>
@@ -21,19 +21,19 @@
           </div>
         </div>
         <div class="illustration">
-          <project-picture v-for="(project, index) in projects" :key="index" :index="index" :sel="selected" :project="project"></project-picture>
+          <project-picture v-for="(project, index) in projects" :key="index" :index="index" :sel="selectedProject" :project="project"></project-picture>
         </div>
         <div class="projects-interact">
           <div class="content">
-            <div class="title">
+            <!-- <div class="title">
               <p>{{ title }}</p>
-            </div>
+            </div> -->
             <div class="buttons">
-              <button @click="backProject" class="left">
+              <button @click.prevent="backProject" class="left">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <router-link tag="button" :to="'project/' + this.selected" class="go">DÉCOUVRIR</router-link>
-            <button @click="nextProject" class="right">
+            <nuxt-link tag="button" :to="'/project/' + link" class="go">{{title}}</nuxt-link>
+            <button @click.prevent="nextProject" class="right">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
             </div>
@@ -53,55 +53,36 @@ export default {
     components: { ProjectElement, ProjectPicture },
     data() {
         return {
-          projects: [
-            {
-                title: "Speed And Addict",
-                img_src: "./src/assets/images/speedandaddict.png"
-            },
-            {
-                title: "Ecroc",
-                img_src: "./src/assets/images/ecroc.gif"
-            },
-            {
-                title: "Quiz Madrid",
-                img_src: "./src/assets/images/quizmadrid.jpg"
-            },
-            {
-                title: "Motion design",
-                img_src: "./src/assets/images/motion.png"
-            },
-            {
-                title: "Univers",
-                img_src: "./src/assets/images/univers.jpg"
-            },
-            {
-                title: "Mobile douche",
-                img_src: "./src/assets/images/mobiledouche.png"
-            },    {
-                title: "Site personnel",
-                img_src: "./src/assets/images/siteperso.png"
-            }
-        ],
-        selected: 0
+            projects: this.$store.getters.projectsList,
+            selected: 0
         }
     },        
     computed: {
         title: function () {
-            return this.projects[this.selected].title.toUpperCase();
+            return this.projects[this.selectedProject].name.toUpperCase();
+        },
+        link: function() {
+            return this.projects[this.selectedProject].path;
+        },
+        selectedProject: function() {
+            console.log(this.$store.getters.selected)
+            return this.$store.getters.selected;
         }
     },
     methods: {
         selectProject(number) {
-            this.selected = number;
+            this.$store.commit("selectProject", number)
         },
         nextProject(){
-            if(this.selected+1 < this.projects.length){
-                this.selected++;
+            let n = this.selectedProject+1;
+            if(n < this.projects.length){
+                this.selectProject(n);
             }
         },
         backProject(){
-            if(this.selected > 0){
-                this.selected--;
+            let b = this.selectedProject;
+            if(b> 0){
+                this.selectProject(b-1);
             }
         }
     },
@@ -110,14 +91,13 @@ export default {
             
         }
     },
-    fetch ({ store, params }) {
-        console.log("test");
-        store.commit('defineBottomLink', {name:"À propos", link:"/about"});
-    },
-    
     transition: {
         name: 'bounce',
         mode: 'out-in'
+    },
+    fetch ({ store, params }) {
+        store.commit('defineBottomLink', {name:"À propos", link:"/about"});
+        store.commit("layoutName", "home");
     }
 }
 </script>
@@ -252,6 +232,10 @@ export default {
     letter-spacing: 2px ;
     margin: 10px;
 }
+#project button {
+    outline: none!important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 #projects div.projects-interact button.go {
     width: calc(100% / 3);
@@ -264,13 +248,15 @@ export default {
     font-size: 1.1em;
     font-family : inherit;
     color: #110D2D;
+    box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.308);
 }
 
 
 #projects div.projects-interact button:not(.go)  {
     height: 45px;
     width: 45px;
-    background-color: #f3f3f3;
+    background-color: #f7f7f7;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.308);
     border: none;
     margin: 0 8px;
     flex-shrink: 0;
@@ -279,12 +265,15 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    svg {
+        height: 20px;
+        width: 20px;
+        * {
+            stroke: #110D2D;
+        }
+    }
 
-#projects div.projects-interact button:not(.go) svg * {
-    stroke: #110D2D;
 }
-
 /* PROJECTS IMAGE */
 
 #projects div.illustration {

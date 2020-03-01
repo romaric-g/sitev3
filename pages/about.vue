@@ -53,6 +53,7 @@ export default {
     fetch ({ store, params }) {
         console.log("test about");
         store.commit('defineBottomLink', {name:"Retour au projet", link:"/"});
+        store.commit("layoutName", "home");
     },
     methods: {
         changeSection(sectionNumber) {
@@ -237,24 +238,29 @@ export default {
 
 @media screen and (max-width: 900px) {
     #about {
-        height: 80%;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         padding: 20px 40px;
+        justify-content: center;
         box-sizing: border-box;
 
         section.portrait {
             display: none;
         }
 
-        section.about {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
+        section.selector {
+            width: 100%;
         }
 
-        section.selector {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
+        section.about {
+            max-height: 50vh;
+
+            .section-select section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
     }   
 }
@@ -265,9 +271,8 @@ export default {
 
 @media screen and (max-width: 500px) {
     #about {
-        padding: 40px 20px;
+        padding: 0 15px;
         section.selector {
-
             display: flex;
             align-items: center;
 

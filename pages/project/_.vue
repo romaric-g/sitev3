@@ -1,10 +1,12 @@
 <template>
-    <div></div>
+    <div>
+        <p>Le projet n'existe pas</p>
+    </div>
 </template>
 
 <script>
 export default {
-    layout: 'projet',
+    
 }
 </script>
 

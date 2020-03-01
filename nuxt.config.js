@@ -4,6 +4,10 @@ export default {
   /*
   ** Headers of the page
   */
+  layoutTransition: {
+    name: 'layout',
+    mode: 'in-out'
+  },
   head: {
     title: process.env.npm_package_name || 'test',
     meta: [

@@ -1,5 +1,5 @@
 <template>
-  <section class="page" :class="{light}">
+  <section class="page" :class="{light, scroll}">
     <div class="title">
       <h1><a to="root">Romaric Gauzi</a></h1>
     </div>
@@ -24,7 +24,7 @@
 import Reseaux from "@/components/common/Reseaux.vue";
 
 export default {
-    props: ["light"],
+    props: ["light","scroll"],
     components: {Reseaux}
 }
 </script>
@@ -79,7 +79,7 @@ section.page {
     height: 100vh;
     width: 100vw;
     min-width: 250px;
-    min-height: 500px;
+    min-height: 600px;
     display: grid;
     grid-template-columns: 80px 1fr 80px;
     grid-template-rows: 80px 1fr 80px;
@@ -169,6 +169,11 @@ section.page .reseaux {
         order: 3;
         flex: 1;
         padding: 20px 10px;
+        z-index: 1;
+
+        .illustration {
+            opacity: 0.8;
+        }
     }
 
     section.page .title h1 {
@@ -188,9 +193,15 @@ section.page .reseaux {
 }
 
 section.page.light {
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.438);
     svg path {
         fill: #110d2d;
     }
+}
+
+section.page.scroll {
+    height: unset!important;
+    min-height: 100vh;
 }
 
 
