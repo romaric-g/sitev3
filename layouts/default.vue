@@ -24,7 +24,7 @@ export default {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
 
