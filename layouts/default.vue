@@ -27,6 +27,7 @@ body {
     font-family: 'Barlow Condensed', sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
+    background-color: #110d2d;
 
     main {
       position: relative;
