@@ -10,19 +10,53 @@
                         <section>
                             <h2 class="title">À PROPOS DE MOI</h2>
                             <div class="desc">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore in ut itaque illo obcaecati quod quam amet vitae? Dolore ipsam consequuntur cum quasi reiciendis voluptatum architecto tenetur accusamus laboriosam id.</p>
+                                <p>Âgé de 18 ans, j'aime les nouvelles technologies, la programmation, le développement web ainsi que le web design. J'apprends continuellement de nouvelles choses en réalisant de nouveau projet en dehors et dans ma formation.</p>
                             </div>
                         </section>
                         <section>
                             <h2 class="title">FORMATIONS</h2>
                             <div class="desc">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore in ut itaque illo obcaecati quod quam amet vitae? Dolore ipsam consequuntur cum quasi reiciendis voluptatum architecto tenetur accusamus laboriosam id.</p>
+                                <div class="formation">
+                                    <p class="name">MMI Bordeaux - 2020-2021</p>
+                                    <p class="info">Métier du multimédia et de l'internet</p>
+                                </div>
+                                <div class="formation">
+                                    <p class="name">Bac STI2D, option SIN - 2017-2019</p>
+                                    <p class="info">Système d'Information et Numérique<br>Mention très bien</p>
+                                </div>
                             </div>
                         </section>
                         <section>
                             <h2 class="title">COMPETANCES</h2>
                             <div class="desc">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore in ut itaque illo obcaecati quod quam amet vitae? Dolore ipsam consequuntur cum quasi reiciendis voluptatum architecto tenetur accusamus laboriosam id.</p>
+                                <div class="skill">
+                                    <p class="name">Front-End</p>
+                                    <p class="info">VueJS, NuxtJS, SCSS</p>
+                                </div>
+                                <div class="skill">
+                                    <p class="name">Back-End</p>
+                                    <p class="info">PHP, NodeJS, RubyOnRails</p>
+                                </div>
+                                <div class="skill">
+                                    <p class="name">Base de données</p>
+                                    <p class="info">SQL, Redis</p>
+                                </div>
+                                <div class="skill">
+                                    <p class="name">Orientée objet</p>
+                                    <p class="info">Java</p>
+                                </div>
+                                <div class="skill">
+                                    <p class="name">Mobile</p>
+                                    <p class="info">Android Studio</p>
+                                </div>
+                                <div class="skill">
+                                    <p class="name">UI/UX</p>
+                                    <p class="info">AdobeXD, Figma</p>
+                                </div>
+                                <div class="skill">
+                                    <p class="name">Autres</p>
+                                    <p class="info">Illustrator, After Effects</p>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -52,7 +86,7 @@ export default {
     },
     fetch ({ store, params }) {
         console.log("test about");
-        store.commit('defineBottomLink', {name:"Retour au projet", link:"/"});
+        store.commit('defineBottomLink', {name:"Projets", link:"/"});
         store.commit("layoutName", "home");
     },
     methods: {
@@ -159,6 +193,26 @@ export default {
                 font-size: 1.2em;
                 font-weight: 300;
                 font-family: 'Comfortaa';
+        }
+
+        .desc {
+            .formation {
+                margin: 15px 0;
+            }
+            .skill {
+                margin: 5px 0;
+                display: flex;
+                align-items: center;
+            }
+            .formation, .skill {
+                .name {
+                    font-weight: 500;
+                    margin-right: 10px;
+                }
+                .info {
+                    font-size: 0.8em;
+                }
+            }
         }
     }
 

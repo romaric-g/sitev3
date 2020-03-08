@@ -12,17 +12,28 @@ export const state = () => ({
             image: "MOKEUPPOS.png",
             tags: ["DEV","VUE JS","WEB"]
         },
-        strawmylife: {
-            name: "Straw My Life",
-            description: "Dans le cadre du DUT MMI à Bordeaux, nous avons pour objectif de créer une entreprise de notre choix.",
-            date: "Octobre 2019",
-            image: "557be385512849.5daaefd9c3c58.jpg",
-            tags: ["DEV","DESIGN","WEB"]
+        elenakoutouldis: {
+            name: "Elena Koutouldis",
+            date: "Janvier 2020",
+            image: "ElenaKoutoulidis.png",
+            tags: ["NUXT JS","STORYBLOK","STRIPE"]
+        },       
+        museum: {
+            name: "Musée Virtuel",
+            date: "Janvier 2020",
+            image: "MuéeVirtuel Miniature.png",
+            tags: ["RUBY ON RAILS"]
+        },
+        quizapp: {
+            name: "Quiz App",
+            date: "Février 2018",
+            image: "QuizMadrid.png",
+            tags: ["DEV","ANDROID STUDIO"]
         },
         ecroc: {
             name: "Ecroc",
-            date: "Février 2019",
-            image: "48333b9fff902fa8cfbc5f26c2a1688f.jpg",
+            date: "Mai 2019",
+            image: "ecroc.png",
             tags: ["DEV","PHP"]
         }
     }
@@ -37,7 +48,6 @@ export const getters = {
             list[i].path = path;
             i++;
         }
-        console.log(list)
         return list;
     },
     selected: (state) => {
@@ -53,8 +63,6 @@ export const mutations = {
         state.layoutName = type;
     },
     selectProject(state, number) {
-        console.log(number)
-        console.log("CHANGE SELECTED PROJECT")
         state.selected = number;
     }
 }

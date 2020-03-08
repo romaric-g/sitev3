@@ -6,13 +6,17 @@
         <nav>
             <ul>
                 <li>
-                    <p class="nav-title">Projets<span class="count">{{ projects.length}}</span></p>
+                    <p class="nav-title" @click="toggleMenu">
+                        <nuxt-link to="/">
+                            Projets<span class="count">{{ projects.length}}</span>
+                        </nuxt-link>
+                    </p>
                     <ul>
                         <li v-for="(project, index) of projects" :key="index"><nuxt-link :to="'project/' + project.path ">{{project.name}}</nuxt-link></li>
                     </ul>
                 </li>
                 <li>
-                    <p class="nav-title">À propos</p>
+                    <p class="nav-title" @click="toggleMenu"><nuxt-link to="/about">À propos</nuxt-link></p>
                 </li>
                 <li>
                     <p class="nav-title">Contact</p>
@@ -103,7 +107,15 @@ export default {
             letter-spacing: 4px;
             text-transform: uppercase;
             font-weight: 500;
-            
+            & > a {
+                text-decoration: none;
+
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
             span {
                 position: absolute;
                 top: 0.6em;
@@ -128,6 +140,13 @@ export default {
                 height: 2px;
                 background-color: #110d2d;
                 left: 0;right: 0;margin: 0 auto;
+                transition-duration: 0.2s;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &:hover:after {
+                width: 90px;
             }
         }
 

@@ -194,7 +194,7 @@ section.page .reseaux {
 
 section.page.light {
     box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.438);
-    svg path {
+    .reseaux svg path {
         fill: #110d2d;
     }
 }

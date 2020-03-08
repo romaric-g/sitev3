@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
     body main {
-        background-color: white;
+        background-color: #F1F4F5;
         color: #110d2d;
     }
     .nav-item span {
