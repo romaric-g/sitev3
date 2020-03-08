@@ -34,6 +34,10 @@
                                     <p class="info">VueJS, NuxtJS, SCSS</p>
                                 </div>
                                 <div class="skill">
+                                    <p class="name">Headless CMS</p>
+                                    <p class="info">StoryBlok</p>
+                                </div>
+                                <div class="skill">
                                     <p class="name">Back-End</p>
                                     <p class="info">PHP, NodeJS, RubyOnRails</p>
                                 </div>
@@ -203,11 +207,13 @@ export default {
                 margin: 5px 0;
                 display: flex;
                 align-items: center;
+                .name {
+                    margin-right: 10px;
+                }
             }
             .formation, .skill {
                 .name {
                     font-weight: 500;
-                    margin-right: 10px;
                 }
                 .info {
                     font-size: 0.8em;
