@@ -10,7 +10,7 @@
                         <section>
                             <h2 class="title">À PROPOS DE MOI</h2>
                             <div class="desc">
-                                <p>Âgé de 18 ans, j'aime les nouvelles technologies, la programmation, le développement web ainsi que le web design. J'apprends continuellement de nouvelles choses en réalisant de nouveau projet en dehors et dans ma formation.</p>
+                                <p>Âgé de 18 ans, j'aime les nouvelles technologies, la programmation, le développement web ainsi que le web design. J'apprends continuellement de nouvelles choses en réalisant de nouveaux projets en dehors et dans ma formation.</p>
                             </div>
                         </section>
                         <section>
