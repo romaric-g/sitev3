@@ -6,7 +6,7 @@
             </Description>
         </section>
         <section class="illu">
-            <Illustration :image="{src: 'uxdesign_presentation.png'}"></Illustration>
+            <Illustration :image="{src: 'uxdesign_presentation-min.png'}"></Illustration>
         </section>
         <section class="buttons">
             <ButtonLink link="https://uxdesign.netlify.com" name="Tester" icon="fill">

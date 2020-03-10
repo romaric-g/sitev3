@@ -9,13 +9,13 @@ export const state = () => ({
         uxdesign: {
             name: "UX Design",
             date: "Février 2020",
-            image: "MOKEUPPOS.png",
+            image: "MOKEUPPOS-min.png",
             tags: ["DEV","VUE JS","WEB"]
         },
         elenakoutouldis: {
             name: "Elena Koutouldis",
             date: "Janvier 2020",
-            image: "ElenaKoutoulidis.png",
+            image: "ElenaKoutoulidis-min.png",
             tags: ["NUXT JS","STORYBLOK","STRIPE"]
         },       
         museum: {
@@ -27,7 +27,7 @@ export const state = () => ({
         quizapp: {
             name: "Quiz App",
             date: "Février 2018",
-            image: "QuizMadrid.png",
+            image: "QuizMadrid-min.png",
             tags: ["DEV","ANDROID STUDIO"]
         },
         ecroc: {
