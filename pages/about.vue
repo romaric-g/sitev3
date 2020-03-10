@@ -2,7 +2,7 @@
     <div class="container left">
         <div id="about">
             <section class="portrait">
-                <img src="@/assets/images/me.jpg" alt="" >
+                <img src="@/assets/images/me-min.jpg" alt="" >
             </section>
             <section class="about">
                 <div class="section-select">
@@ -18,7 +18,7 @@
                             <div class="desc">
                                 <div class="formation">
                                     <p class="name">MMI Bordeaux - 2020-2021</p>
-                                    <p class="info">Métier du multimédia et de l'internet</p>
+                                    <p class="info">Métiers du multimédia et de l'internet</p>
                                 </div>
                                 <div class="formation">
                                     <p class="name">Bac STI2D, option SIN - 2017-2019</p>
@@ -27,7 +27,7 @@
                             </div>
                         </section>
                         <section>
-                            <h2 class="title">COMPETANCES</h2>
+                            <h2 class="title">COMPETENCES</h2>
                             <div class="desc">
                                 <div class="skill">
                                     <p class="name">Front-End</p>
@@ -46,7 +46,7 @@
                                     <p class="info">SQL, Redis</p>
                                 </div>
                                 <div class="skill">
-                                    <p class="name">Orientée objet</p>
+                                    <p class="name">POO</p>
                                     <p class="info">Java</p>
                                 </div>
                                 <div class="skill">
