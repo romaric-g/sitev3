@@ -110,7 +110,7 @@ export default {
     max-height: 80vw;
     max-width: 100vh;
     width: 100%;
-    height: 100%;
+    height: 740px;
     margin: 0 auto;
 }
 
