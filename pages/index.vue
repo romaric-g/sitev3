@@ -314,6 +314,7 @@ export default {
     /* CONTENT */
     #projects { 
         max-height: unset;
+        height: 100%;
     }
 
     #projects.container {
