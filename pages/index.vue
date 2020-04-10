@@ -107,7 +107,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 80vw;
+    max-height: 80vh;
     max-width: 100vh;
     width: 100%;
     height: 740px;
