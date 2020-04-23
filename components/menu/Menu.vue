@@ -22,7 +22,6 @@
                     <p class="nav-title">Contact</p>
                     <div class="contact">
                         <p>contact@romaricgauzi.com</p>
-                        <p>07 83 06 62 31</p>
                     </div>
                 </li>
             </ul>
