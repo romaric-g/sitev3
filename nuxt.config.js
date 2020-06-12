@@ -1,7 +1,8 @@
 const path = require("path");
+import Mode from 'frontmatter-markdown-loader/mode'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
