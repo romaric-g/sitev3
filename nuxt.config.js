@@ -2,7 +2,7 @@ const path = require("path");
 import Mode from 'frontmatter-markdown-loader/mode'
 
 export default { 
-    mode: 'spa',
+    mode: 'universal',
     /*
     ** Headers of the page
     */
@@ -68,7 +68,7 @@ export default {
           include: path.resolve(__dirname, "content"),
           loader: "frontmatter-markdown-loader",
           options: {
-            mode: [Mode.VUE_COMPONENT, Mode.META]
+            mode: [Mode.HTML, Mode.META]
           }
         });
       }

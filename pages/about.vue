@@ -89,7 +89,6 @@ export default {
         }
     },
     fetch ({ store, params }) {
-        console.log("test about");
         store.commit('defineBottomLink', {name:"Projets", link:"/"});
         store.commit("layoutName", "home");
     },
