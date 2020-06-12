@@ -1,21 +1,7 @@
 const path = require("path");
-var glob = require('glob');
 import Mode from 'frontmatter-markdown-loader/mode'
 
-/* https://github.com/jake-101/bael-template */
-async function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      var filepathGlob = urlFilepathTable[url];
-      return glob
-        .sync(filepathGlob, { cwd: "content" })
-        .map(filepath => `${url}/${path.basename(filepath, ".md")}`);
-    })
-  );
-}
-
-export default async() => { 
-  return {
+export default { 
     mode: 'spa',
     /*
     ** Headers of the page
@@ -61,9 +47,13 @@ export default async() => {
     */
     modules: [],
     generate: {
-      routes: await getDynamicPaths({
-        "/project": "project/*.md"
-      })
+      routes: [
+        '/project/ecroc',
+        '/project/elenakoutoulidis',
+        '/project/uxdesign',
+        '/project/quizapp',
+        '/project/museum'
+      ]
     },
     /*
     ** Build configuration
@@ -84,5 +74,4 @@ export default async() => {
         });
       }
     }
-  }
 }
