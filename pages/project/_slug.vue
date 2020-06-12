@@ -1,35 +1,38 @@
 <template>
-    <div class="project-page">
-        <template v-if="project != null">
+        <div class="project-page">
             <div class="header">
-                <h1 class="p-title">{{project.name}}</h1>
+                <h1 class="p-title">{{title}}</h1>
             </div>
-        </template>
-        <component :is="singlePostComponent" />
-    </div>
+            <div class="fill">
+                <component :is="singlePostComponent" class="project-content" />
+            </div>
+        </div>
 </template>
 
 <script>
 
 export default {
-  async asyncData({ params }) {
+  async asyncData({ params, redirect  }) {
     try {
-      console.info(params.slug);
       let post = await import(`~/content/${params.slug}.md`);
       return {
         title: post.attributes.title,
         singlePostComponent: post.vue.component
       };
     } catch (err) {
-      console.debug(err);
+      //redirect("/")
       return false;
     }
+  },
+  fetch({ store, params }) {
+    store.commit("layoutName", "projet");
   }
 };
 </script>
 
 
 <style lang="scss">
+
 .project-page {
     width: 100%;
     .header {
@@ -43,12 +46,72 @@ export default {
             text-transform: uppercase;
         }
     }
-
     .project-content {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-column-gap: 1rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 1.2em;
+        }
+        a.button {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #110d2d;
+            min-width: 200px;
+            text-align: center;
+            padding: 13px;
+            font-size: 1.3em;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: white;
+            color: #110d2d;
+            letter-spacing: 2px;
+            margin: 4px 8px;
+            transition-duration: .2s;
+
+            &:hover, &:focus {
+                background-color: #110d2d;
+                color: white;
+
+                span.svgstroke {
+                    svg, svg path{
+                        stroke: white;
+                    }
+                }
+                span.svgfill{
+                    svg, svg path{
+                        fill: white;
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    height: 25px;
+                    width: 25px;
+                }
+            }
+
+
+        }
+
+        img {
+            padding: 40px 0;
+            width: 100%;
+        }
     }
 }
 section {
@@ -75,4 +138,6 @@ section {
         }
     }
 }
+
+
 </style>

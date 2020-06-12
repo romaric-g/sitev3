@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     toggleMenu(e) {
-      console.log("test")
       e.clickMenu = true;
       this.menu = !this.menu;
     },

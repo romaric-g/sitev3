@@ -32,7 +32,7 @@
               <button @click.prevent="backProject" class="left">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <nuxt-link tag="button" :to="'/project/' + link" class="go">{{title}}</nuxt-link>
+            <nuxt-link tag="button" :to="link" class="go">{{title}}</nuxt-link>
             <button @click.prevent="nextProject" class="right">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
@@ -51,21 +51,30 @@ import { mapMutations } from 'vuex'
 
 export default {
     components: { ProjectElement, ProjectPicture },
+    async asyncData() {
+        const resolve = require.context("~/content/", true, /\.md$/);
+        const imports = resolve.keys().map(key => {
+        const [, name] = key.match(/\/(.+)\.md$/);
+            return resolve(key);    
+        });
+        return {
+            projects: imports
+        };
+    },
     data() {
         return {
-            projects: this.$store.getters.projectsList,
-            selected: 0
+            selected: 0,
+            prefix: 'project'
         }
-    },        
+    },
     computed: {
         title: function () {
-            return this.projects[this.selectedProject].name.toUpperCase();
+            return this.projects[this.selectedProject].attributes.title.toUpperCase();
         },
         link: function() {
-            return this.projects[this.selectedProject].path;
+            return this.getPermalink(this.projects[this.selectedProject])
         },
         selectedProject: function() {
-            console.log(this.$store.getters.selected)
             return this.$store.getters.selected;
         }
     },
@@ -84,6 +93,9 @@ export default {
             if(b> 0){
                 this.selectProject(b-1);
             }
+        },
+        getPermalink(post) {
+            return  `${this.prefix}/${post.meta.resourcePath.split('\\').pop().split('/').pop().split('.')[0]}`;
         }
     },
     watch: {

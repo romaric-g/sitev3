@@ -14,6 +14,11 @@ import Projet from "@/layouts/layoutsFix/Projet.vue";
 
 export default {
   components: { Home, Projet },
+  data() {
+    return {
+      projects: []
+    }
+  },
   computed: {
     layout () {
       return this.$store.state.layoutName;
@@ -35,6 +40,10 @@ body {
       position: relative;
       overflow: hidden;
     }
+}
+
+.projet {
+  width: 100%;
 }
 
 @media screen and (max-width: 500px){

@@ -12,7 +12,7 @@
                         </nuxt-link>
                     </p>
                     <ul>
-                        <li v-for="(project, index) of projects" :key="index"><nuxt-link :to="'project/' + project.path ">{{project.name}}</nuxt-link></li>
+                        <li v-for="(project, index) of projects" :key="index"><nuxt-link :to="getPermalink(project)">{{project.attributes.title}}</nuxt-link></li>
                     </ul>
                 </li>
                 <li>
@@ -40,8 +40,19 @@ export default {
     props: ["open","toggleMenu"],
     components: {Reseaux},
     data() {
+        const resolve = require.context("~/content/", true, /\.md$/);
+        const imports = resolve.keys().map(key => {
+        const [, name] = key.match(/\/(.+)\.md$/);
+            return resolve(key);    
+        });
         return {
-            projects: this.$store.getters.projectsList
+            prefix: "project",
+            projects: imports
+        }
+    },
+    methods: {
+        getPermalink(post) {
+            return `${this.prefix}/${post.meta.resourcePath.split('\\').pop().split('/').pop().split('.')[0]}`;
         }
     }
 }

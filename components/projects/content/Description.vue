@@ -11,10 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.description {
-    width: 100%;
-    p {
-        font-size: 1.2em;
-    }
-}
+
 </style>

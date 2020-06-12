@@ -15,7 +15,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || 'test' },
+      { title: "Romaric Gauzi | Développeur Fullstack & Designer Web" },
+      { hid: 'description', name: 'description', content: "Développeur fullstack et étudiant en DUT métiers du multimédiat et de l'internet à Bordeaux Montaigne" },
       { name:"theme-color", content:"#110d2d" }
     ],
     link: [

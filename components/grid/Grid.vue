@@ -77,7 +77,7 @@ section.page > .content {
 section.page {
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     min-width: 250px;
     min-height: 600px;
     display: grid;

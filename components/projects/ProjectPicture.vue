@@ -1,6 +1,6 @@
 <template>
     <div class="imageBox">
-        <img :src="'projects/'+project.image" :class="isUp" alt="">
+        <img :src="'projects/'+project.attributes.image" :class="isUp" alt="">
     </div>   
 </template>
 
