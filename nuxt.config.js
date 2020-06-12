@@ -11,11 +11,10 @@ export default {
       mode: 'in-out'
     },
     head: {
-      title: process.env.npm_package_name || 'test',
+      title: "Romaric Gauzi | Développeur Fullstack & Designer Web",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { title: "Romaric Gauzi | Développeur Fullstack & Designer Web" },
         { hid: 'description', name: 'description', content: "Développeur fullstack et étudiant en DUT métiers du multimédiat et de l'internet à Bordeaux Montaigne" },
         { name:"theme-color", content:"#110d2d" }
       ],
