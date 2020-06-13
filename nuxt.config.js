@@ -68,7 +68,10 @@ export default {
           include: path.resolve(__dirname, "content"),
           loader: "frontmatter-markdown-loader",
           options: {
-            mode: [Mode.HTML, Mode.META]
+            mode: [Mode.HTML, Mode.META],
+            vue: {
+              root: 'markdown' // The class name of the root div
+            }
           }
         });
       }

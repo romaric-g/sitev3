@@ -51,16 +51,19 @@ import { mapMutations } from 'vuex'
 
 export default {
     components: { ProjectElement, ProjectPicture },
-    data() {
+    async asyncData() {
         const resolve = require.context("~/content/", true, /\.md$/);
         const imports = resolve.keys().map(key => {
         const [, name] = key.match(/\/(.+)\.md$/);
             return resolve(key);    
         });
         return {
-            selected: 0,
-            prefix: 'project',
             projects: imports
+        }
+    },
+    data() {
+        return {
+            prefix: "project"
         }
     },
     computed: {

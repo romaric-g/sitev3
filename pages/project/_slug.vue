@@ -4,7 +4,8 @@
                 <h1 class="p-title">{{title}}</h1>
             </div>
             <div class="fill">
-                <component :is="singlePostComponent" class="project-content" />
+                <div class="project-content" v-html="html">
+                </div>
             </div>
         </div>
 </template>
@@ -17,12 +18,16 @@ export default {
       let post = await import(`~/content/${params.slug}.md`);
       return {
         title: post.attributes.title,
-        singlePostComponent: post.vue.component
+        html: post.html
       };
     } catch (err) {
-      //redirect("/")
       return false;
     }
+  },
+  data() {
+      return {
+          title: null
+      }
   },
   fetch({ store, params }) {
     store.commit("layoutName", "projet");
