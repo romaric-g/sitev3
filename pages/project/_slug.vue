@@ -21,6 +21,7 @@ export default {
         html: post.html
       };
     } catch (err) {
+      redirect("/")  
       return false;
     }
   },
