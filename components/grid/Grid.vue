@@ -120,7 +120,7 @@ section.page .reseaux {
         padding: 0;
     }
 
-    svg path {
+    svg path, svg circle {
         fill: white;
     }
 }
