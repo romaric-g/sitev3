@@ -6,9 +6,13 @@ export default {
     /*
     ** Headers of the page
     */
+   
     layoutTransition: {
       name: 'layout',
-      mode: 'in-out'
+      mode: 'in-out',
+      beforeEnter: function() {
+        console.log("TEST BEFORE ENTER")
+      }
     },
     head: {
       title: "Romaric Gauzi | Développeur Fullstack & Designer Web",
@@ -40,11 +44,14 @@ export default {
     ** Nuxt.js dev-modules
     */
     buildModules: [
+      '~/modules/customTemplate/index.js'
     ],
     /*
     ** Nuxt.js modules
     */
-    modules: [],
+    modules: [
+
+    ],
     generate: {
       fallback: true,
       routes: [
@@ -76,5 +83,5 @@ export default {
           }
         });
       }
-    }
+    },
 }

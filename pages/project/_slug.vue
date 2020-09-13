@@ -30,9 +30,7 @@ export default {
           title: null
       }
   },
-  fetch({ store, params }) {
-    store.commit("layoutName", "projet");
-  }
+  layout: 'project',
 };
 </script>
 

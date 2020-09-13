@@ -1,5 +1,5 @@
 <template>
-    <div class="container right">
+    <div class="container">
       <div id="projects">
         <h2>MES PROJETS</h2>
         <div class="projects-nav">
@@ -103,12 +103,11 @@ export default {
         }
     },
     transition: {
-        name: 'bounce',
+        name: 'bounceright',
         mode: 'out-in'
     },
     fetch ({ store, params }) {
         store.commit('defineBottomLink', {name:"À propos", link:"/about"});
-        store.commit("layoutName", "home");
     }
 }
 </script>

@@ -16,17 +16,17 @@
 } */
 
 
-.left.bounce-enter-active {
-  animation: bounce-in-left.8s;
+.bounceleft-enter-active {
+  animation: bounce-in-left .8s;
 }
-.left.bounce-leave-active {
-  animation: bounce-out-left .8s;
+.bounceleft-leave-active {
+  animation: bounce-out-right .8s;
 }
-.right.bounce-enter-active {
+.bounceright-enter-active {
   animation: bounce-in-right .8s;
 }
-.right.bounce-leave-active {
-  animation: bounce-out-right .8s;
+.bounceright-leave-active {
+  animation: bounce-out-left .8s;
 }
 @keyframes bounce-in-left {
   0% {
@@ -61,21 +61,22 @@
   100% { transform: scale(0.8) translateX(-200vh); }
 }
 
-.layout-enter-active, .layout-leave-active {
-  top: 0;
+#__layout {
   position: absolute;
+  top: 0;left: 0;right: 0;
 }
 
+.layoutproject-enter-active {
+  z-index: 1000;
+  animation: showFromDown .8s;
+}
 
-.projet.layout-enter-active {
-  z-index: 100;
-  animation: showFromDown 0.6s;
+.layoutdefault-leave-active {
+  z-index: 1000;
+  animation: showFromDown .8s reverse;
 }
-.projet.layout-leave-active {
-  z-index: 100;
-  animation: showFromDown 0.6s reverse;
-}
-.home.layout-leave-active, .home.layout-enter-active {
+
+.layoutdefault-enter {
   z-index: -1;
 }
 
@@ -87,3 +88,27 @@
     transform: translateY(0);
   }
 }
+
+/* 
+.layoutdefault-enter-active,
+.layoutdefault-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 2500ms;
+}
+.layoutdefault-enter,
+.layoutdefault-leave-to {
+  opacity: 0;
+}
+
+
+.layoutproject-enter-active,
+.layoutproject-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 2500ms;
+}
+.layoutproject-enter,
+.layoutproject-leave-to {
+  opacity: 0;
+} */
